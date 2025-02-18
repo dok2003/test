@@ -10,3 +10,7 @@
         $ git push origin -u <newname> simply push the new local branch with correct name
 
         $ git push -u origin <local-branch> upload a local branch for the first time
+    file .gitignore
+        *.log
+        k.txt
+        foloder1/
