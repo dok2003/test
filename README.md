@@ -14,3 +14,6 @@
         *.log
         k.txt
         foloder1/
+        
+
+        git pull => then repair self
