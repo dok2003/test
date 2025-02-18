@@ -17,3 +17,5 @@
 
     merge conflict
         how to fix this error:   git pull => then repair self
+
+    git checkout <code commit> : back to that commit 
