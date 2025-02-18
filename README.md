@@ -14,3 +14,5 @@
         *.log
         k.txt
         foloder1/
+    merge conflict
+        how to fix this error
