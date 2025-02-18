@@ -14,6 +14,6 @@
         *.log
         k.txt
         foloder1/
-        
 
-        git pull => then repair self
+    merge conflict
+        how to fix this error:   git pull => then repair self
