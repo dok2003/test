@@ -18,4 +18,10 @@
     merge conflict
         how to fix this error:   git pull => then repair self
 
-    git checkout <code commit> : back to that commit 
+    git checkout <code commit> : back to that commit
+    
+    learnMakeFile
+        https://makefiletutorial.com/
+        https://github.com/dok2003/basics-graphics-music/blob/main/boards/karnix_ecp5_yosys/Makefile
+
+
