@@ -6,9 +6,11 @@
 4. ```branch -a```   List all remote branches.
 5. ```branch checkout/switch <namebranch>```
 
-$ git push origin --delete <oldname> Delete the current/old branch
-$ git push origin -u <newname> simply push the new local branch with correct name
-$ git push -u origin <local-branch> upload a local branch for the first time
+```$ git push origin --delete <oldname>``` Delete the current/old branch
+
+```$ git push origin -u <newname>``` simply push the new local branch with correct name
+
+```$ git push -u origin <local-branch>``` upload a local branch for the first time
 
 # file .gitignore
 ``*.log``
