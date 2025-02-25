@@ -23,4 +23,4 @@ $ git push -u origin <local-branch> upload a local branch for the first time
     
 # learnMakeFile
 - [Источник интернета](https://makefiletutorial.com/)
-- [abc](https://github.com/dok2003/basics-graphics-music/blob/main/boards/karnix_ecp5_yosys/Makefile)
+- [Ссылка github](https://github.com/dok2003/basics-graphics-music/blob/main/boards/karnix_ecp5_yosys/Makefile)
