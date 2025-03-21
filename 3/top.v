@@ -9,11 +9,6 @@ module top (
 	wire rst;
 	wire ir_ready;
 	wire [31:0] ir_cmd;
-	
-	reg [15:0] slow_clk_div;
-	wire slow_clk;
-
-	assign slow_clk = slow_clk_div[2];
 
 	assign rst = key[3];
 
@@ -26,24 +21,24 @@ module top (
 //	assign gpio[1:0] = test[1:0];
 //	assign gpio[2] = test[2];
 	assign led[3:0] = test[3:0];
-//	assign led[3:0] = ir_ready ? ir_cmd[19:16] : '0;
 
-	ir_decoder2 ir_dec(
-			.clk(slow_clk),
+	ir_decoder ir_dec(
+			.clk(clk25),
 			.rst(rst),
-			.enable('1),
+			.enable(1'b1),
 			.ir_input(gpio[3]),
 			.ready(ir_ready),
 			.command(ir_cmd),
 			.test(test[3:0]));
 
-	always @(posedge clk25 or posedge rst)
+/*	always_ff @(posedge clk25 or posedge rst)
 	begin
 		if(rst) begin
-			slow_clk_div <= '0;
+
 		end else begin
-			slow_clk_div <= slow_clk_div + 'd1;
+			// To-Do
+
 		end
 
-	end
+	end*/
 endmodule
