@@ -13,20 +13,11 @@ module top (
 	reg [15:0] slow_clk_div;
 	wire slow_clk;
 
-	assign slow_clk = slow_clk_div[2];
+	assign slow_clk = slow_clk_div[5];
 
 	assign rst = key[3];
 
-//	assign led[3] = ir_cmd[30];
-//	assign led[2] = ir_cmd[20];
-//	assign led[1] = ir_cmd[11];
-//	assign led[0] = ir_cmd[0];
-//	assign led[3:0] = ir_cmd[3:0];
-
-//	assign gpio[1:0] = test[1:0];
-//	assign gpio[2] = test[2];
-	assign led[3:0] = test[3:0];
-//	assign led[3:0] = ir_ready ? ir_cmd[19:16] : '0;
+	assign led[3:0] = ir_ready ? ir_cmd[27:24] : '0;
 
 	ir_decoder2 ir_dec(
 			.clk(slow_clk),

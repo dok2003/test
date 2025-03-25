@@ -7,13 +7,13 @@ module ir_decoder2
         output wire [31:0] command,
         output wire [3:0] test
 );
-	localparam T0_MIN = (28250-1410)/8;
-	localparam T0_MAX = (28250+1410)/8;
-	localparam T1_MIN = (57000-2850)/8;
-	localparam T1_MAX = (57000+2850)/8;
-	localparam START_MIN = (128175-6400)/8;
-	localparam START_MAX = (128175+6400)/8;
-	localparam T1_TOP = 1750000;
+	localparam T0_MIN = (28256-2816)/64;
+	localparam T0_MAX = (28256+2816)/64;
+	localparam T1_MIN = (57008-5648)/64;
+	localparam T1_MAX = (57008+5648)/64;
+	localparam START_MIN = (128176-6400)/64;
+	localparam START_MAX = (128176+6400)/64;
+	//localparam T1_TOP = 1750000;
 
 
         wire strobe_front;
@@ -31,12 +31,8 @@ module ir_decoder2
 	assign command[31:0] = cmd[31:0];
 
 	assign strobe_front = (ir_input_last != ir_input) * ir_input;
-//	assign test[0]= ir_input;
-//	assign test[1] = ir_input_last;
-//	assign test[0]= ~strobe_front;
-	assign test[0]= ~Ready;
-//	assign test[3:0]= bit_count[3:0];
-	assign test[3:1] = '0;     
+	//assign test[0]= ~ready;
+	assign test[3:0] = '0;     
 	always @(posedge clk or posedge rst)
         begin
 		if(rst) begin
