@@ -1,5 +1,5 @@
-NAME = decoder
-VERILOG += top.v decoder.v motop_dwm.v
+NAME = dcss
+VERILOG += top.v ir_decoder.v
 INC = ./
 LPF = karnix_cabga256.lpf
 DEVICE = 25k
