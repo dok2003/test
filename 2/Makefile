@@ -1,5 +1,5 @@
-NAME = ir_decoder2
-VERILOG += top.v ir_decoder2.v 
+NAME = ir_decoder
+VERILOG += top.v ir_decoder_fix.v 
 INC = ./
 LPF = karnix_cabga256.lpf
 DEVICE = 25k

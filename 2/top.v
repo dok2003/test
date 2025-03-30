@@ -9,7 +9,7 @@ module top (
 	wire rst;
 	wire ir_ready;
 	wire [31:0] ir_cmd;
-	
+	wire ack;
 	reg [15:0] slow_clk_div;
 	wire slow_clk;
 
@@ -17,16 +17,18 @@ module top (
 
 	assign rst = key[3];
 
-	assign led[3:0] = ir_ready ? ir_cmd[27:24] : '0;
+	assign led[3:0] = ir_ready ? ir_cmd[3:0] : '0;
+//	assign led[0] = ack;
 
-	ir_decoder2 ir_dec(
+	ir_decoder_fix ir_dec(
 			.clk(slow_clk),
 			.rst(rst),
+			.ack(ack),
 			.enable('1),
 			.ir_input(gpio[3]),
 			.ready(ir_ready),
-			.command(ir_cmd),
-			.test(test[3:0]));
+			.command(ir_cmd)
+	);
 
 	always @(posedge clk25 or posedge rst)
 	begin

@@ -13,7 +13,7 @@ module ir_decoder2
 	localparam T1_MAX = (57008+5648)/64;
 	localparam START_MIN = (128176-6400)/64;
 	localparam START_MAX = (128176+6400)/64;
-	//localparam T1_TOP = 1750000;
+	
 
 
         wire strobe_front;
@@ -21,9 +21,9 @@ module ir_decoder2
 	reg  ir_input_last;
 	reg [20:0] t1;
 	reg [7:0] bit_count;
-	reg [7:0] dem;
+	
 	reg [31:0] cmd;
-	reg [1250:0] a;
+	
 
 
 	assign ready = bit_count == 31;
@@ -39,7 +39,6 @@ module ir_decoder2
 			ir_input_last <= 1'b1;
 		        t1 <= 'b0;
 			bit_count <= '0;
-			dem[5:0] <= '0;
 			cmd<= '0;
 
                 end else begin
